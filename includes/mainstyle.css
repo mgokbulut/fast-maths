@@ -1,0 +1,792 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background-image: url("background.jpg");
+}
+
+/*--Homescreen--------------------------------------------*/
+.homescreen {
+  margin-top: 80px;
+  margin-left: 300px;
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+}
+
+.homescreen a {
+  border: 2px black solid;
+  background-color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 50px;
+  width: 300px;
+}
+
+.homescreen img {
+  display: block;
+  width: 900px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.homescreen a:hover {
+  background-color: green;
+  color: white;
+}
+
+/*--Top Bar-----------------------------------------------*/
+.topbar {
+  display: block;
+  position: fixed;
+  width: 100%;
+  min-width: 1500px;
+  top: 0;
+  margin-top: 0;
+  background-color: rgb(170, 170, 170);
+  border-bottom: 3px solid rgb(100, 100, 100);
+}
+
+.logo {
+  float: left;
+  width: 300px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.mainnavigationbar {
+  display: inline-block;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 44px;
+}
+
+.mainnavigationbar li {
+  display: inline-block;
+  background-color: lightblue;
+  list-style: none;
+  height: 50px;
+  width: 200px;
+  border: 3px solid rgb(100, 100, 100);
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.mainnavigationbar li a {
+  display: block;
+  height: 18px;
+  text-decoration: none;
+  color: black;
+  padding: 16px 20px;
+}
+
+.mainnavigationbar a:hover {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: cyan;
+}
+
+.profileinfo {
+  display: inline-block;
+  background-color: lightblue;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 370px;
+  margin: 5px 5px 0px 0px;
+  margin-right: 10px;
+}
+
+.name_topscore {
+  display: inline-block;
+  vertical-align:left;
+  width: 150px;
+}
+
+.successrates {
+  display: inline-block;
+  vertical-align:left;
+  width: 90px;
+  margin-left: 5px;
+}
+
+.logout {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: white;
+  box-shadow: 0 4px #666;
+  padding: 5px;
+}
+
+.logout span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.logout span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5px;
+  transition: 0.5s;
+}
+
+.logout:hover span {
+  padding-right: 15px;
+}
+
+.logout:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.logout:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+.logout a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+/*---Start Button--------------------------------------------------------------------*/
+.startbutton {
+  border: 5px solid gray;
+  border-radius: 10px;
+  padding: 0px;
+  width: 120px;
+  height: 200px;
+  font-size: 20px;
+  box-shadow: 0 9px #999;
+}
+
+.startbutton span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.startbutton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.5s;
+}
+
+.startbutton:hover span {
+  padding-right: 80px;
+}
+
+.startbutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.startbutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.startbutton a {
+  font-size: 120px;
+  padding-top: 70px;
+  text-decoration: none;
+  display: block;
+  height: 294px;
+}
+
+/*---Start Form----------------------------------------------------------------------*/
+.startform {
+  border: none;
+  margin-left: 500px;
+  margin-top: 300px;
+  background: none;
+  width: 750px;
+}
+/*
+.form__label{
+  font-family:'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-left: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+.form__input{
+  font-family:'Roboto', sans-serif;
+  color: #333;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border:none;
+  width: 100%;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform:translateY(-4rem);
+}
+
+<div class="form__group">
+  <input type="text" class="form__input" placeholder="Full Name" />
+  <label for="name" class="form__label">Full Name</label>
+</div>
+*/
+.checkbox{
+  margin: 10px;
+  width: 150px;
+  height: 30px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: lightblue;
+}
+
+.formbutton{
+  border: 5px solid gray;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 0px;
+  width:500px;
+  height: 330px;
+  font-size: 70px;
+  float: right;
+}
+
+.message{
+  display:inline-block;
+  margin-left:530px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: lightblue;
+  font-size: 30px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-align: center;
+  color: black;
+  width:725px;
+  height: 50px;
+}
+/*---All Body-----------------------------------------------------------------------*/
+.mainbody {
+  display: block;
+  width: 1900px;
+  margin: 10px;
+  margin-top: 114px;
+  min-width: 1500px;
+}
+
+/*---Calculator---------------------------------------------------------------------*/
+.calculator {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: red;
+  width: 300px;
+  height: 330px;
+  float: left;
+}
+
+.calculator form {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(200, 200, 200);
+  padding: 3px;
+  margin-left: 3px;
+  margin-top: 3px;
+  width: 284px;
+  height: 314px;
+}
+
+.calculator form input {
+  width: 66px;
+  height: 40px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.calculator form .display {
+  text-align: right;
+  margin-left: 3px;
+  font-size: 20px;
+  width: 274px;
+  height: 30px;
+}
+
+/*---Whole Game------------------------------------------------------*/
+.game {
+  display: inline-block;
+  border: 2px solid black;
+  padding-top: 5px;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: lightblue;
+  width: 1100px;
+  float: left;
+}
+
+.pointtimer {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 60px;
+  display: block;
+  margin-left: 10px;
+  max-width: 1080px;
+}
+
+.pointtimer div {
+  border: 2px solid black;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 5px;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.pointtimer ul {
+  padding-left: 0;
+  margin-top: 0;
+  border-right: none;
+  margin-left: 310px;
+  float: left;
+}
+
+.pointtimer ul li {
+  background-color: green;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  width: 80px;
+  padding: 19px 0px 19px 0px;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid black;
+}
+
+.question div {
+  width: 775px;
+  margin-bottom: 10px;
+}
+
+.question .q1 {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 400px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+  width:1080px;
+}
+
+.question .q1 .q11 {
+  display: inline-block;
+  padding: 10px;
+  width:700px;
+}
+
+.question .a1 {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 10px;
+  margin-top: 20px;
+  height: 120px;
+  font-family: Helvetica, sans-serif;
+  font-weight: light;
+  -webkit-font-smoothing: antialiased;
+  width:1075px;
+}
+
+.question .a1 .buttons {
+  display: inline-block;
+  height: 70px;
+  padding: 10px 0px 15px 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 800px;
+  background-color: yellow;
+  margin-left: 50px;
+}
+input.answers {
+  padding: 2px;
+  height: 40px;
+  margin-left: 5px;
+  margin-top: 10px;
+  background-position: 160px -10px;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.question .a1 .next {
+  background-color: green;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  float: right;
+  margin: 36px 10px 0px 0px;
+}
+
+#quitbutton{
+  background-color: green;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  float: left;
+  margin: 36px 0px 0px 10px;
+}
+
+/*---Leaderboard-------------------------------------------*/
+.rightside {
+  display: inline-block;
+  background-color: orange;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.leaderboard {
+  display: block;
+  background-color: rgb(230, 230, 230);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 425px;
+  margin-right: 0px;
+  overflow: auto;
+}
+
+.leaderboard::-webkit-scrollbar {
+  width: 10px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 5px;
+}
+
+.leaderboard p {
+  display: inline;
+  font-family: Apple Chancery, fantasy;
+  font-size: 20px;
+}
+
+.leaderboard img {
+  width: 30px;
+  height: 30px;
+}
+
+.leaderboard a {
+  background-color: rgb(150, 150, 150);
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+  border: 2px solid black;
+  float: right;
+}
+
+.leaderboard a:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.leaderboard li {
+  padding: 5px 0px 5px 0px;
+  border-bottom: 2px dashed black;
+}
+
+/*----------------------------------------------------------*/
+/*---Add Question-------------------------------------------*/
+#warning {
+  background-color: lightblue;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  height: 600px;
+  width: 1000px;
+  margin: 150px 0px 0px 10px;
+}
+
+#warning p {
+  display: block;
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+  width: 800px;
+  height: 300px;
+  font-size: 36px;
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+}
+
+#warning .buttons p {
+  display: inline-block;
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+  width: 220px;
+  height: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#warning .buttons p a {
+  display: block;
+  background-color: red;
+  height: 100px;
+}
+
+/*-- Login / Register -----------------------------------------*/
+.header {
+  font-size: 120%;
+  width: 30%;
+  margin: 50px auto 0px;
+  color: white;
+  background: blue;
+  text-align: center;
+  border: 1px solid #B0C4DE;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+}
+
+form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.input-group {
+  margin: 10px 0px 10px 0px;
+}
+
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: green;
+  border: none;
+  border-radius: 5px;
+}
+
+.error {
+  width: 92%;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.success {
+  color: #3c763d;
+  background: #dff0d8;
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
+/*--Daily Questions -----------------------------------*/
+.dailyQuestions_form {
+ width: 1140px;
+ height: 32px;
+ border:2px solid lightblue;
+ border-radius: 10px;
+ margin-top: 20px;
+ margin-left: 10px;
+
+}
+.dailyQuestions_form input{
+  display: inline;
+  float:left;
+  text-align: center;
+  height: 28px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/*--Game Over ----------------------------------------*/
+.answerSteps {
+  margin-top:30px;
+}
+
+.gameover-mathml {
+  /* display: inline-block; */
+  /* font-size: 110%; */
+  /* width: 50%;
+  margin: 0 auto; */
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	backg
+  -color: #F5F5F5;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: lightblue;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(0deg,
+	                                          rgba(255, 255, 255, 0.5) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, 0.5) 50%,
+											  rgba(255, 255, 255, 0.5) 75%,
+											  transparent 75%,
+											  transparent)
+}
+/*--Slideshow in the end-----------------------------*/
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  border-radius: 20px;
+  margin: auto;
+  background-color: white;
+  border: 5px solid black;
+  height: 700px;
+  width: 1200px;
+  margin-top: 120px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .nexts {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.nexts {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  width: 100%;
+  font-size: 24px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 25px;
+  width: 100px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 10px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  padding-top: 5px;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
