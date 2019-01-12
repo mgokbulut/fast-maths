@@ -102,7 +102,7 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-
+//mysql://ba820320d61e66:4d126dce@us-cdbr-iron-east-01.cleardb.net/heroku_c65546da3d140d0?reconnect=true
 $connection = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
 ?>
