@@ -735,7 +735,7 @@ class game_class {
         if (result === "fail") {
           //the current score is less than high score
         } else if (result === "success") {
-          alert("New High Scor!");
+          alert("New High Score!");
         } else if (result === "error") {
           alert("error");
         }
