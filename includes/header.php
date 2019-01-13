@@ -43,6 +43,23 @@
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 </head>
+
+  <script type="text/javascript">
+    //adjusting screen size for all costumers
+    var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    var width_proportion = x * 100 /1920;
+    width_proportion = width_proportion.toString() + "%";
+    var height_proportion = y * 100 /950;
+    height_proportion = height_proportion.toString() + "%";
+    $('body').css('width', width_proportion);
+    $('body').css('height', height_proportion);
+  </script>
+
   <body>
     <div class="topbar">
 

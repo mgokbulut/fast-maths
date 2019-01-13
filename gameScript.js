@@ -635,6 +635,13 @@ class game_class {
         document.getElementById('QuestionNumber').innerHTML = game.QUESTION_NUMBER;
         game.QUESTION_NUMBER++;
 
+        $(document).keypress(function(e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+              $("#nextbutton").click();
+            }
+        });
+        
         document.getElementById('quitbutton').onclick = function() {
           var bar1 = document.getElementById('he1');
           var bar2 = document.getElementById('he2');
