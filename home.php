@@ -9,7 +9,7 @@
   <!-- Full-width images with number and caption text -->
 
     <div class="mySlides fade">
-      <img src="includes/fastmaths_presentation_1.PNG" style="width:100%;height:100%;visibility:visible;">
+      <img src="includes/fastmaths_presentation_1.jpg" style="width:100%;height:100%;visibility:visible;">
     </div>
 
     <div class="mySlides fade">
