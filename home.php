@@ -4,7 +4,7 @@
 
 <!-- content -->
 <script type="text/javascript" src="slideshow.js"></script>
-<div class="slideshow-container" style="width:1600px;height:790px;">
+<div class="slideshow-container" style="width:70%;height:70%;">
 
   <!-- Full-width images with number and caption text -->
 
