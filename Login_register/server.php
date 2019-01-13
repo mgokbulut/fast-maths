@@ -65,7 +65,7 @@ if (isset($_POST['reg_user'])) {
     }
     else
     {
-      array_push($errors, $cleardb_username);
+      array_push($errors, "database error");
       array_push($errors, $dateInformation);
     }
   }
