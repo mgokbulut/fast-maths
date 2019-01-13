@@ -882,7 +882,7 @@ class game_class {
           question3_MathML = game.parser.getArr(question3_MathML, 1);
           question3_MathML = game.parser.MathML_translator(question3_MathML);
           question3_MathML = '<math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: 120%;">' + question3_MathML + '</math>';
-          MathML_Render(question3_MathML, "wrong2");
+          MathML_Render(question3_MathML, "wrong3");
         }
       });
       if(question3.indexOf(',') != -1){
