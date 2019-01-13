@@ -843,7 +843,7 @@ class game_class {
           MathML_Render(question2_MathML, "wrong2");
         }
       });
-      if(question1.indexOf(',') != -1){
+      if(question2.indexOf(',') != -1){
         var tempQuestion2 = question2.split(',');
         var answer2 = game.parser.simultaneous(tempQuestion2[0], tempQuestion2[1], tempQuestion2[2], tempQuestion2[3], tempQuestion2[4], tempQuestion2[5]);
       }else {
@@ -885,7 +885,7 @@ class game_class {
           MathML_Render(question3_MathML, "wrong2");
         }
       });
-      if(question1.indexOf(',') != -1){
+      if(question3.indexOf(',') != -1){
         var tempQuestion3 = question3.split(',');
         var answer3 = game.parser.simultaneous(tempQuestion3[0], tempQuestion3[1], tempQuestion3[2], tempQuestion3[3], tempQuestion3[4], tempQuestion3[5]);
       }else {
