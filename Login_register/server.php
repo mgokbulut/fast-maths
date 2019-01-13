@@ -1,7 +1,5 @@
 <?php
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
 session_start();
 date_default_timezone_set('Asia/Tokyo');
 $date   = new DateTime(); //this returns the current date time

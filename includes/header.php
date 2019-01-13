@@ -1,5 +1,6 @@
 <?php
-  include_once("includes\db_handler-inc.php");
+  include_once("includes/db_handler-inc.php");
+  include_once("includes/update-info.php");
 ?>
 
 <?php
@@ -14,7 +15,6 @@
     unset($_SESSION['username']);
     header("location: ../Login_register/login.php");
   }
-  include_once("includes\update-info.php");
 ?>
 
 <!DOCTYPE html>

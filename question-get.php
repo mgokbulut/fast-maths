@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include_once("includes\db_handler-inc.php");
+  include_once("includes/db_handler-inc.php");
   if(isset($_GET["level"]) && isset($_GET["difficulty"])){
 
     $difficulty = $_GET["difficulty"];

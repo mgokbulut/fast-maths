@@ -1,5 +1,5 @@
 <?php
-  include_once("includes\db_handler-inc.php");
+  include_once("includes/db_handler-inc.php");
   session_start();
   if(isset($_GET["isCorrect"]) && isset($_GET["id"])){
     //isCorrect == 0 means it is wrong

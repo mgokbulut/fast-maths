@@ -1,6 +1,6 @@
 <?php
 //ALTER TABLE table_name AUTO_INCREMENT = 1;  --> RESETTING AUTO_INCREMENT
-include_once("..\includes\db_handler-inc.php");
+include_once("../includes/db_handler-inc.php");
 
 session_start();
 

@@ -1,5 +1,5 @@
 <?php
-  include_once("includes\db_handler-inc.php");
+  include_once("includes/db_handler-inc.php");
 ?>
 <?php
   session_start();
