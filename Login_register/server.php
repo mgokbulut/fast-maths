@@ -1,4 +1,14 @@
 <?php
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$connection = new mysqli($server, $username, $password, $db);
+
 session_start();
 date_default_timezone_set('Asia/Tokyo');
 $date   = new DateTime(); //this returns the current date time
@@ -9,7 +19,7 @@ $username = "";
 $email    = "";
 $errors = array();
 
-include_once("..\includes\db_handler-inc.php");
+//include_once("..\includes\db_handler-inc.php");
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
