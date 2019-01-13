@@ -266,6 +266,18 @@ class dailyQuestions_class {
     document.getElementById("dailyQuestion_wrong").innerHTML = fail;
     document.getElementById("dailyQuestion_unsolved").innerHTML = unsolved;
 
+    $.ajax({
+      type: "GET", //GET or POST or PUT or DELETE verb
+      url: "setDate.php", // Location of the service
+      data: {
+        "time": 1,
+      },
+      success: function(data) {
+        data = $.trim(data);
+        alert(data);
+      },
+      fail: function(data) {}
+    }); //end of ajax
 
   }
 
