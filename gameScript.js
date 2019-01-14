@@ -533,11 +533,6 @@ class game_class {
 
   getQuestion() {
 
-    for (var i = 0; i < 10; i++) {
-      document.getElementById('answer' + i).value = "";
-      $('#answer' + i).show();
-    }
-
     this.checklevel();
     $.ajax({
       type: "GET", //GET or POST or PUT or DELETE verb
@@ -548,6 +543,10 @@ class game_class {
       }, // Location of the service
       success: function(data) {
         // data = question, answer, id
+        for (var i = 0; i < 10; i++) {
+          document.getElementById('answer' + i).value = "";
+          $('#answer' + i).show();
+        }
         data = $.trim(data);
         data = data.split("#");
         //data[0] = "((20 / 2) * (9/1 + -9/5 - 9/2)),((10 - 9) * -(-9 - 18)),(16 - 2 * -11),(13 - 7/3),((11 + 8/5 * (12 + 14)) + (8 / 3)),(4 * 1)";
@@ -641,7 +640,7 @@ class game_class {
               $("#nextbutton").click();
             }
         });
-        
+
         document.getElementById('quitbutton').onclick = function() {
           var bar1 = document.getElementById('he1');
           var bar2 = document.getElementById('he2');
