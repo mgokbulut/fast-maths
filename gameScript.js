@@ -266,6 +266,18 @@ class dailyQuestions_class {
     document.getElementById("dailyQuestion_wrong").innerHTML = fail;
     document.getElementById("dailyQuestion_unsolved").innerHTML = unsolved;
 
+    $.ajax({
+      type: "GET", //GET or POST or PUT or DELETE verb
+      url: "setDate.php", // Location of the service
+      data: {
+        "time": 1,
+      },
+      success: function(data) {
+        data = $.trim(data);
+        alert(data);
+      },
+      fail: function(data) {}
+    }); //end of ajax
 
   }
 
@@ -519,26 +531,6 @@ class game_class {
     return [time, score];
   }
 
-  enable_enter(){
-    //document.getElementById("nextbutton").disabled = false;
-    $(document).keypress(function(e) {
-        var keycode = (e.keyCode ? e.keyCode : e.which);
-        if (keycode == '13') {
-          $("#nextbutton").click();
-        }
-    });
-  }
-  disable_enter(){
-    $("#nextbutton").on('click', function(event){
-        event.stopPropagation()
-    });
-    $(document).keypress(
-      function(event){
-        if (event.which == '13') {
-          event.preventDefault();
-        }
-    });
-  }
   getQuestion() {
 
     this.checklevel();
@@ -767,7 +759,7 @@ class game_class {
         if (result === "fail") {
           //the current score is less than high score
         } else if (result === "success") {
-          alert("New High Scor!");
+          alert("New High Score!");
         } else if (result === "error") {
           alert("error");
         }
@@ -863,7 +855,7 @@ class game_class {
           MathML_Render(question2_MathML, "wrong2");
         }
       });
-      if(question1.indexOf(',') != -1){
+      if(question2.indexOf(',') != -1){
         var tempQuestion2 = question2.split(',');
         var answer2 = game.parser.simultaneous(tempQuestion2[0], tempQuestion2[1], tempQuestion2[2], tempQuestion2[3], tempQuestion2[4], tempQuestion2[5]);
       }else {
@@ -902,10 +894,10 @@ class game_class {
           question3_MathML = game.parser.getArr(question3_MathML, 1);
           question3_MathML = game.parser.MathML_translator(question3_MathML);
           question3_MathML = '<math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: 120%;">' + question3_MathML + '</math>';
-          MathML_Render(question3_MathML, "wrong2");
+          MathML_Render(question3_MathML, "wrong3");
         }
       });
-      if(question1.indexOf(',') != -1){
+      if(question3.indexOf(',') != -1){
         var tempQuestion3 = question3.split(',');
         var answer3 = game.parser.simultaneous(tempQuestion3[0], tempQuestion3[1], tempQuestion3[2], tempQuestion3[3], tempQuestion3[4], tempQuestion3[5]);
       }else {
