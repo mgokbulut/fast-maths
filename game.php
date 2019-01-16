@@ -68,21 +68,19 @@
 
       </div>
 
-        <div class="a1">
+        <div id="buttons_div" class="a1">
           <a href="#" id="quitbutton" onclick="getQuestion()">&laquo; Quit</a>
 
-          <div id="buttons_div" class="buttons" style="margin-top:10px;">
+          <div class="buttons" style="margin-top:10px;">
 
           </div>
 
           <a href="#" class="next" id="nextbutton" onclick="getQuestion()" >Next &raquo;</a>
-          <script type="text/javascript">
-            $("#myButton").click(function() {
-              alert("Button code executed.");
-            });
-          </script>
+
         </div>
     </div>
+  </div>
+
   <div class="rightside">
     <!--Leaderboard-->
     <?php
