@@ -266,18 +266,6 @@ class dailyQuestions_class {
     document.getElementById("dailyQuestion_wrong").innerHTML = fail;
     document.getElementById("dailyQuestion_unsolved").innerHTML = unsolved;
 
-    $.ajax({
-      type: "GET", //GET or POST or PUT or DELETE verb
-      url: "setDate.php", // Location of the service
-      data: {
-        "time": 1,
-      },
-      success: function(data) {
-        data = $.trim(data);
-        alert(data);
-      },
-      fail: function(data) {}
-    }); //end of ajax
 
   }
 
@@ -531,6 +519,26 @@ class game_class {
     return [time, score];
   }
 
+  enable_enter(){
+    //document.getElementById("nextbutton").disabled = false;
+    $(document).keypress(function(e) {
+        var keycode = (e.keyCode ? e.keyCode : e.which);
+        if (keycode == '13') {
+          $("#nextbutton").click();
+        }
+    });
+  }
+  disable_enter(){
+    $("#nextbutton").on('click', function(event){
+        event.stopPropagation()
+    });
+    $(document).keypress(
+      function(event){
+        if (event.which == '13') {
+          event.preventDefault();
+        }
+    });
+  }
   getQuestion() {
 
     this.checklevel();
@@ -542,11 +550,10 @@ class game_class {
         "difficulty": this.current_difficulty
       }, // Location of the service
       success: function(data) {
+        jQuery('#buttons_div').html('');
+        MathML_Render('<math xmlns="http://www.w3.org/1998/Math/MathML"></math>',"expression1");//<mrow></mrow>
+        MathML_Render('<math xmlns="http://www.w3.org/1998/Math/MathML"></math>',"expression2");
         // data = question, answer, id
-        for (var i = 0; i < 10; i++) {
-          document.getElementById('answer' + i).value = "";
-          $('#answer' + i).show();
-        }
         data = $.trim(data);
         data = data.split("#");
         //data[0] = "((20 / 2) * (9/1 + -9/5 - 9/2)),((10 - 9) * -(-9 - 18)),(16 - 2 * -11),(13 - 7/3),((11 + 8/5 * (12 + 14)) + (8 / 3)),(4 * 1)";
@@ -574,13 +581,13 @@ class game_class {
           var question_MathML2 = '<math xmlns="http://www.w3.org/1998/Math/MathML">' + questionMathml1 + "<mi>x</mi><mo>+</mo>" + questionMathml2 + "<mi>y</mi><mo>=</mo>" + questionMathml3 + '</math>';
           MathML_Render(question_MathML2, "expression2");
 
+          $("#buttons_div").append('<input id="answer0"type="text"class="answers"></input>');
+          $("#buttons_div").append('<input id="answer1"type="text"class="answers"></input>');
           document.getElementById('answer0').style.width = "300px";
           document.getElementById('answer1').style.width = "300px";
           document.getElementById('answer0').placeholder = "x";
           document.getElementById('answer1').placeholder = "y";
-          for (var i = 2; i < 10; i++) {
-            document.getElementById('answer' + i).style.display = "none";
-          }
+
           var temp = data[1].split(',');
           var answers = [];
           answers[0] = [];
@@ -606,8 +613,9 @@ class game_class {
             }
           }
 
-          var i = 0;
-          for (; i < answers.length; i++) {
+
+          for (var i = 0; i < answers.length; i++) {
+           $("#buttons_div").append('<input id="answer'+i+'"type="text"class="answers"></input>');
             var power = answers[i][1];
             if (power == 0) {
               var symbol = 'constant';
@@ -618,9 +626,7 @@ class game_class {
             }
             document.getElementById('answer' + i).placeholder = symbol;
           }
-          for (; i < 10; i++) {
-            document.getElementById('answer' + i).style.display = "none";
-          }
+
           var widthProportion = (600) - 5 + (5 * answers.length + 1); // space available
           widthProportion = widthProportion / answers.length;
           widthProportion = widthProportion.toString();
@@ -634,14 +640,21 @@ class game_class {
         document.getElementById('QuestionNumber').innerHTML = game.QUESTION_NUMBER;
         game.QUESTION_NUMBER++;
 
-        $(document).keypress(function(e) {
-            var keycode = (e.keyCode ? e.keyCode : e.which);
-            if (keycode == '13') {
-              $("#nextbutton").click();
+
+        /*var input = document.getElementById("answer0");
+        input.addEventListener("keydown", function (e) {
+            if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+                $("#nextbutton").click();
             }
-        });
+        });*/
 
         document.getElementById('quitbutton').onclick = function() {
+          $(document).keypress(function(e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+
+            }
+          });
           var bar1 = document.getElementById('he1');
           var bar2 = document.getElementById('he2');
           var bar3 = document.getElementById('he3');
@@ -673,6 +686,7 @@ class game_class {
           }
         }
         document.getElementById('nextbutton').onclick = function() {
+          //this.disable();
           var submittedAnswers = [];
           for (var i = 0; i < answers.length; i++) {
             submittedAnswers[i] = document.getElementById("answer" + i).value;
@@ -753,7 +767,7 @@ class game_class {
         if (result === "fail") {
           //the current score is less than high score
         } else if (result === "success") {
-          alert("New High Score!");
+          alert("New High Scor!");
         } else if (result === "error") {
           alert("error");
         }
@@ -849,7 +863,7 @@ class game_class {
           MathML_Render(question2_MathML, "wrong2");
         }
       });
-      if(question2.indexOf(',') != -1){
+      if(question1.indexOf(',') != -1){
         var tempQuestion2 = question2.split(',');
         var answer2 = game.parser.simultaneous(tempQuestion2[0], tempQuestion2[1], tempQuestion2[2], tempQuestion2[3], tempQuestion2[4], tempQuestion2[5]);
       }else {
@@ -888,10 +902,10 @@ class game_class {
           question3_MathML = game.parser.getArr(question3_MathML, 1);
           question3_MathML = game.parser.MathML_translator(question3_MathML);
           question3_MathML = '<math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: 120%;">' + question3_MathML + '</math>';
-          MathML_Render(question3_MathML, "wrong3");
+          MathML_Render(question3_MathML, "wrong2");
         }
       });
-      if(question3.indexOf(',') != -1){
+      if(question1.indexOf(',') != -1){
         var tempQuestion3 = question3.split(',');
         var answer3 = game.parser.simultaneous(tempQuestion3[0], tempQuestion3[1], tempQuestion3[2], tempQuestion3[3], tempQuestion3[4], tempQuestion3[5]);
       }else {

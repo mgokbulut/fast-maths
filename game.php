@@ -15,9 +15,6 @@
       window.onbeforeunload = function() {
           return "Are you sure you want to leave?";
       }
-    </script>
-
-    <script type="text/javascript">
       function startGame() {
         $( document ).ready(function() {
           game = new game_class();
@@ -75,20 +72,7 @@
           <a href="#" id="quitbutton" onclick="getQuestion()">&laquo; Quit</a>
 
           <div class="buttons" style="margin-top:10px;">
-            <style media="screen">
-
-            </style>
-            <input id="answer0"type="text"class="answers"></input>
-            <input id="answer1"type="text"class="answers"></input>
-            <input id="answer2"type="text"class="answers"></input>
-            <input id="answer3"type="text"class="answers"></input>
-            <input id="answer4"type="text"class="answers"></input>
-            <input id="answer5"type="text"class="answers"></input>
-            <input id="answer6"type="text"class="answers"></input>
-            <input id="answer7"type="text"class="answers"></input>
-            <input id="answer8"type="text"class="answers"></input>
-            <input id="answer9"type="text"class="answers"></input>
-
+  
           </div>
 
           <a href="#" class="next" id="nextbutton" onclick="getQuestion()" >Next &raquo;</a>
