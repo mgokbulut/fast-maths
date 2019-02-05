@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>giris</title>
+  <title>Register</title>
   <link rel="stylesheet" type="text/css" href="../includes/mainstyle.css">
 </head>
 <body>
