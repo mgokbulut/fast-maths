@@ -522,7 +522,7 @@ class game_class {
             break;
           case 3:
             time = 110;
-            score = 60;
+            score = 65;
             break;
         }
         break;
@@ -1062,6 +1062,7 @@ class simplifier {
           resultArray_coefficient.splice(index, 0, operand[0]);
         }
         return [resultArray_coefficient, resultArray_power_float, resultArray_power_string];
+        // this subroutine modifies the resultant arrays and returns them
       }
 
       multiply(operand1, operand2) {
@@ -1763,7 +1764,7 @@ class questionGenerator {
     var question = "";
 
     while (true) {
-      if (level == 13) {
+      if (level == 13) {//meaning simultaneous equations
         var a = this.selectTeplate(13);
         var b = this.selectTeplate(13);
         var c = this.selectTeplate(13);
@@ -2200,9 +2201,11 @@ function MathML_Render(mathml_text, div) {
 }
 
 String.prototype.replaceAll = function(target, replacement) {
+  //adding a new method to the String class
   return this.split(target).join(replacement);
 };
 
 Array.prototype.insert = function(index, item) {
+  //adding a new method to array class
   this.splice(index, 0, item);
 };
