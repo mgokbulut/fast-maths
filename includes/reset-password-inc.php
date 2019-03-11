@@ -89,7 +89,7 @@ if (isset($_POST["reset-password-submit"])) {
 	  }
 
 } else {
-	header('location: ../Login_register/login.php');
+	header('location: fast-maths.herokuapp.com/Login_register/login.php');
 }
 
 /*
