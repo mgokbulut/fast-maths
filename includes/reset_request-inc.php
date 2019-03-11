@@ -10,7 +10,7 @@ require '../libraries/PHPMailer/src/PHPMailer.php';
 require '../libraries/PHPMailer/src/SMTP.php';
 
 if(isset($_POST["reset_request_submit"])){
-
+	echo phpversion();
 	$userEmail = mysqli_real_escape_string($connection, $_POST["email"]); // this is used to detect sql insertion attacks
 	//first check if the e=mail entered exists in the users table:
 
