@@ -77,7 +77,7 @@ if (isset($_POST["reset-password-submit"])) {
 						  }else {
 						  	mysqli_stmt_bind_param($statement, "s", $tokenEmail);
 						  	mysqli_stmt_execute($statement);
-							header("Location: ../Login_register/Login.php?newpassword=updated");
+							header("Location: http://fast-maths.herokuapp.com/Login_register/login.php?newpassword=updated");
 						  }
 
 						}
@@ -89,7 +89,7 @@ if (isset($_POST["reset-password-submit"])) {
 	  }
 
 } else {
-	header('location: fast-maths.herokuapp.com/Login_register/login.php');
+	header('location: http://fast-maths.herokuapp.com/Login_register/login.php');
 }
 
 /*
