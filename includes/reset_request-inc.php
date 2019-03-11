@@ -24,7 +24,7 @@ if(isset($_POST["reset_request_submit"])){
 	$selector = bin2hex(random_bytes(8));
 	$token = random_bytes(32);// 32 bytes generated
 
-	$url = "fast-maths.herokuapp.com/Login_register/create-new-password.php?selector=". $selector . "&validator=" . bin2hex($token);
+	$url = "https://www.fast-maths.herokuapp.com/Login_register/create-new-password.php?selector=". $selector . "&validator=" . bin2hex($token);
 	//echo $url;
 	$expires = date("U") + 1800;//setting the limit - 1 hour later
 	
