@@ -12,6 +12,14 @@
 
   <form method="post" action="login.php">
     <?php include('errors.php'); ?>
+     <?php 
+
+      if(isset($_GET["newpassword"])) {
+        if ($_GET["newpassword"] == "updated") {
+          echo '<p style="color:green">your password is updated</p>';
+        }
+      }
+      ?>
     <div class="input-group">
       <label>Username</label>
       <input type="text" name="username" >
@@ -25,6 +33,9 @@
     </div>
     <p>
       Not yet a member? <a href="register.php">Sign up</a>
+    </p>
+    <p>
+      <a href="reset-password.php">Forgot your password? </a>
     </p>
   </form>
 </body>
