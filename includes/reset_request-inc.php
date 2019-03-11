@@ -10,7 +10,7 @@ require '../libraries/PHPMailer/src/PHPMailer.php';
 require '../libraries/PHPMailer/src/SMTP.php';
 
 if(isset($_POST["reset_request_submit"])){
-	echo phpversion();
+
 	$userEmail = mysqli_real_escape_string($connection, $_POST["email"]); // this is used to detect sql insertion attacks
 	//first check if the e=mail entered exists in the users table:
 
@@ -24,7 +24,7 @@ if(isset($_POST["reset_request_submit"])){
 	$selector = bin2hex(random_bytes(8));
 	$token = random_bytes(32);// 32 bytes generated
 
-	$url = "www.fast-maths.herokuapp.com/Login_register/create-new-password.php?selector=". $selector . "&validator=" . bin2hex($token);
+	$url = "fast-maths.herokuapp.com/Login_register/create-new-password.php?selector=". $selector . "&validator=" . bin2hex($token);
 	//echo $url;
 	$expires = date("U") + 1800;//setting the limit - 1 hour later
 	
