@@ -30,10 +30,18 @@ if (isset($_POST['reg_user'])) {
 
   // first check the database to make sure
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
-  $result = mysqli_query($connection, $user_check_query);
-  $user = mysqli_fetch_assoc($result);
 
+  $sql = "SELECT * FROM users WHERE username=? OR email=? LIMIT 1;";
+  $statement = mysqli_stmt_init($connection);
+    if(!mysqli_stmt_prepare($statement, $sql)){
+      echo "There was an error!";
+      exit();
+    } else {
+      mysqli_stmt_bind_param($statement, "ss", $username, $email);
+      mysqli_stmt_execute($statement);
+      $result = mysqli_stmt_get_result($statement);
+    }
+    $user = mysqli_fetch_assoc($result);
   if ($user) { // if user exists
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
@@ -48,6 +56,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
     $password = md5($password_1);//encrypt the password before saving in the database
     $startRate = '0,0';
+    // prapered statement is not used since the the inputs are already tested using prepared statement on checking if the same username exists.
+    //this means that if there was a security issue, the program would not have come this far in execution
     $query = "INSERT INTO users (email,password,username,max_point,daily_questions,year9,year10,year11,year12) VALUES('$email','$password','$username',0,'$dateInformation','$startRate','$startRate','$startRate','$startRate')";
     $querywrk=mysqli_query($connection, $query);
     if($querywrk)
@@ -88,9 +98,18 @@ if (isset($_POST['login_user'])) {
   }
 
   if (count($errors) == 0) {
-    $password = md5($password);
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $results = mysqli_query($connection, $query);
+    $password = md5($password);//rehashing the password so that they can be compared
+    $sql = "SELECT * FROM users WHERE username=? AND password=?;";
+    $statement = mysqli_stmt_init($connection);
+      if(!mysqli_stmt_prepare($statement, $sql)){
+        echo "There was an error!";
+        exit();
+      } else {
+        mysqli_stmt_bind_param($statement, "ss", $username, $password);
+        mysqli_stmt_execute($statement);
+        $results = mysqli_stmt_get_result($statement);
+      }
+
     if (mysqli_num_rows($results) == 1) {
       while($row=mysqli_fetch_array($results))
   		{

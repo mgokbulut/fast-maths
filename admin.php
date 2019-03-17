@@ -51,14 +51,43 @@
         //n gives -> 1, 2 but m gives 01,02
       ?>
     </div>
-    <button class="logout" style="float:right; width:200px; height:240px; font-size:16px; border:5px solid black; border-radius:10px;"> <a href="includes/header.php?logout=0"><span>Log Out</span></a></button>
+    <button class="logout" onclick="window.location.href='includes/header.php?logout=0'" style="float:right; width:200px; height:240px; font-size:16px; border:5px solid black; border-radius:10px;"> <span style="font-size: 24px;">Log Out</span></button>
 
-    <form name="sendtoDB" id="sendtoDB" class="" action="" method="post" style="width:1200px; height:200px; border: 5px solid lightblue; border-radius:10px;">
-      <input type="text" id="level" name="level" placeholder=" Level to send (9,10,11,12,13)" style=" width:500px;height:100px;border: 5px solid black; border-radius:10px;font-size:35px;margin-top:40px;">
-      <input type="text" name="amount" id="amount" placeholder=" amount" style=" width:500px;height:100px;border: 5px solid black; border-radius:10px;font-size:35px;margin-top:40px;">
+    <form name="sendtoDB" id="sendtoDB" class="" action="" method="post" 
+    style="width:1200px;
+    height:200px; 
+    border: 5px solid lightblue; 
+    border-radius:10px;  ">
+
+      <input type="text" id="level" name="level" placeholder="Level to send (9,10,11,12)"
+      style=" width:410px;
+      height:100px;
+      border: 5px solid black;
+      border-radius:10px;
+      font-size:35px;
+      margin-top:40px;">
+
+      <input type="text" name="amount" id="amount" placeholder=" amount" 
+      style=" width:150px;
+      height:100px;
+      border: 5px solid black;
+      border-radius:10px;
+      font-size:35px;
+      margin-top:40px;">
+
+      <input type="text" name="type" id="type" placeholder="type" 
+      style=" width:300px;
+      height:100px;
+      border: 5px solid black; 
+      border-radius:10px;
+      font-size:35px;
+      margin-top:40px;">
+
       <input type="button" name="" value="send" onclick="send();" style=" width:100px;height:100px;border: 5px solid black; border-radius:10px;font-size:30px;margin-top:40px;">
+    <p style="font-size:20px;">* possible types <b>(algebraic_expression)</b>,<b>(simultaneous_equations)</b></p>
     </form>
-
+<br><br><br><br>
+<h1 style="text-align: center;">Database</h1>
 <style media="screen">
 table.blueTable {
   border: 1px solid #1C6EA4;
@@ -121,7 +150,7 @@ table.blueTable tfoot .links a{
 
     <?php
     $query1=mysqli_query($connection, "Select * from users");//SELECT * FROM `questions` WHERE level=9
-    $query2=mysqli_query($connection, "Select * from questions");
+    $query2=mysqli_query($connection, "Select * from questions Order by level ASC");
       echo "<br> <br> <br>";
         echo "<table class='blueTable'>";
           echo "<tr>";

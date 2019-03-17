@@ -1,44 +1,18 @@
 <?php
-  include_once("includes/db_handler-inc.php");
+  include_once("db_handler-inc.php");
+  include_once("update-profile-info-inc.php")
 ?>
 
 <?php
-  $id = $_SESSION['user_id'];
-  $username = $_SESSION['username'];
-
-  $query1 = "SELECT * FROM users WHERE username='$username' AND id='$id'";
-  $results = mysqli_query($connection, $query1);
-  if (mysqli_num_rows($results) == 1) {
-    while($row=mysqli_fetch_array($results)){
-      $max_point=$row["max_point"];
-      $id=$row["id"];
-      $lastDate = $row["daily_questions"];
-      $year9Info = $row["year9"];
-      $year10Info = $row["year10"];
-      $year11Info = $row["year11"];
-      $year12Info = $row["year12"];
-    }
-
-    $_SESSION['max_point'] = $max_point;
-    $_SESSION['daily_questions'] = $lastDate;
-    $_SESSION['year9'] = $year9Info;
-    $_SESSION['year10'] = $year10Info;
-    $_SESSION['year11'] = $year11Info;
-    $_SESSION['year12'] = $year12Info;
-  }
-?>
-
-<?php
-  session_start();
-
+  
   if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
-    header('location: Login_register/login.php');
+    header('Location: ../Login_register/login.php');
   }// /images/picture.jpg
   if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header("location: ../Login_register/login.php");
+    header("Location: ../Login_register/login.php");
   }
 ?>
 
@@ -69,28 +43,13 @@
 
 </head>
 
-  <script type="text/javascript">
-    //adjusting screen size for all costumers
-    var w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
-    x = w.innerWidth || e.clientWidth || g.clientWidth,
-    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    var width_proportion = x * 100 /1920;
-    width_proportion = width_proportion.toString() + "%";
-    var height_proportion = y * 100 /950;
-    height_proportion = height_proportion.toString() + "%";
-    $('body').css('width', width_proportion);
-    $('body').css('height', height_proportion);
-  </script>
 
   <body>
     <div class="topbar">
 
         <div style="display:inline-block;">
           <!--Logo img-->
-          <img class="logo" src="includes/logo.png">
+          <img class="logo" src="includes/images/logo.png">
 
           <!--Mainnavigation bar-->
           <ul class="mainnavigationbar">

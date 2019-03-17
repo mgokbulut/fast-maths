@@ -2,7 +2,7 @@
 <div class="leaderboard">
 
   <div style="display: inline-block;">
-    <img src="includes/trophy.png">
+    <img src="includes/images/trophy.png">
     <p style="font-family:Brush Script MT, Brush Script Std, cursive; font-size:32px;">Leaderboard</p>
   </div>
 

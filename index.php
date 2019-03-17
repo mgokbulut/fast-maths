@@ -5,8 +5,9 @@
 </head>
 
 <body>
+	<h1>Test Application</h1>
 	<div class="homescreen">
-		<img src="includes/logo.png">
+		<img src="includes/images/logo.png">
 		<a style="float:left;" href="Login_register/login.php">Login</a>
 		<a style="float:right;"href="Login_register/register.php">Sign up</a>
 	</div>

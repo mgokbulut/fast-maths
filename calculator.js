@@ -21,6 +21,7 @@ function changeSign(input) {
 }
 function compute(form)  {
 	form.display.value = eval(form.display.value)
+	//eval funtion is used to evaluate simple expressions
 }
 function square(form)  {
 	form.display.value = eval(form.display.value) * eval(form.display.value)

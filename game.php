@@ -13,6 +13,7 @@
 
     <script type="text/javascript">
       window.onbeforeunload = function() {
+          //this is triggered when the user attempts to close the window.
           return "Are you sure you want to leave?";
       }
     </script>
@@ -29,6 +30,7 @@
           game.getQuestion();
         });
         var temp_levels = '<?php foreach( $_SESSION['levels'] as $level){echo $level . ',';}  ?>';
+        //stroring the user id in js local storage
         localStorage.setItem('user_id', <?php echo $_SESSION['user_id']; ?>);
       }
       window.onload = startGame;
@@ -54,32 +56,43 @@
     <div class="question">
 
       <div class="q1" style="text-align: center;">
-        <div class=q11>Question:<p id="QuestionNumber"></p></div>
+        <div class=q11><b>Question: <span id="QuestionNumber"></span></b></div>
 
-        <div id="expression1" style="margin-left:50px;">
+        <div id="expression1" style="width:auto;height: auto;text-align: center;">
     			<math display="block">
     				<mrow class="beginning">
     				</mrow>
     			</math>
     		</div>
-        <div id="expression2">
+        <div id="expression2" style="width:auto;height: auto;text-align: center;">
     			<math display="block">
     				<mrow class="beginning">
     				</mrow>
     			</math>
     		</div>
-
       </div>
+      <div style="
+        border:2px solid black;
+        margin-left: 12px;
+        border-radius: 10px;
+        width: 1077px;
+        height: 40px;
+        background-color: white;
+        float: bottom;
+        padding-bottom: 5px;
+
+        ">
+          <p style="text-align: center;"><b>Solve the questions and put the answers in boxes below in fraction form</b></p>
+        </div>
 
         <div class="a1">
-          <a href="#" id="quitbutton" onclick="getQuestion()">&laquo; Quit</a>
+          <button id="quitbutton" onclick="getQuestion()">&laquo; Quit</button>
 
           <div id="buttons_div" class="buttons" style="margin-top:10px;">
 
-
           </div>
 
-          <a href="#" class="next" id="nextbutton" onclick="getQuestion()" >Next &raquo;</a>
+          <button class="next" id="nextbutton" onclick="getQuestion()" >Next &raquo;</button>
 
         </div>
     </div>

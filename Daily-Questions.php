@@ -13,6 +13,7 @@
 <script type="text/javascript" src="slideshow.js"></script>
 <script type="text/javascript">
   function diff_hours(dt2, dt1){
+    //this function returns the time difference between two dates
     dt1 = $.trim(dt1);
     dt1 = new Date(dt1);
     dt2 = $.trim(dt2);
@@ -31,7 +32,14 @@
     var difference = diff_hours(current, past);
     var bool = true;
     dailyQuestions = new dailyQuestions_class();
-
+    /*checks if the time difference between now and the data stored 
+    in database is 24 hours. 
+    if it is it checks if there is questions stored in the local storage
+    meaning that the daily questions are already generated, if not the time stored 
+    in database is updated and function is directed to another printDailyQuestions function for question generation
+    generation
+    if not the message containing time left for the daily questions is displayed
+    */
     if(difference < 24){
       bool = false;
       try{
@@ -52,7 +60,7 @@
       document.getElementById("dailyQuestion_message").innerHTML = "Click on the buttons with question labels below or the buttons on the right and left to see the questions";
       dailyQuestions.dailyQuestions('<?php echo  $_SESSION['year9']?>', '<?php echo  $_SESSION['year10']?>', '<?php echo  $_SESSION['year11']?>', '<?php echo  $_SESSION['year12']?>');
       currentSlide(1);
-      $.ajax({
+      $.ajax({//updates the date stored in database
          type        : "GET", //GET or POST or PUT or DELETE verb
          url         : "Daily-Questions.php", // Location of the service
          data        : {"setDate":1}, //Data sent to server
@@ -72,7 +80,7 @@
       $query = mysqli_query($connection,"Update users set daily_questions='$Current' where id='$id' ");
   }
 ?>
-<div class="slideshow-container">
+<div class="slideshow-container" style="margin-top: 120px;">
 
   <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
