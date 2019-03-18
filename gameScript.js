@@ -2098,7 +2098,7 @@ class simplifier {
     }
 
     result += "</mrow>";
-    result = result.replaceAll("*","&times;");//replaces * with invisible multiplication
+    result = result.replaceAll("*","×");//replaces * with invisible multiplication
     return result;
   }
 }
