@@ -724,7 +724,25 @@ class game_class {
           question_MathML = game.parser.getArr(question_MathML, 1);
           question_MathML = game.parser.MathML_translator(question_MathML);
           //font size of the questions can be changed below
-          question_MathML = '<math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: 120%;">' + question_MathML + '</math>';
+
+          var size;//this size variable is going to determine amplification of its size in 
+          //the screen so that every question can be fited into the game box
+          //the length and size has to have inverse relation ship
+          //as the length of the question gets larger, the amplification should get smaller
+          //SQL --> select avg(length(question)) from questions where level=9
+          //average length of year 9 = 13.2440   characters (sample size = 250 questions)
+          //average length of year 10 = 23.3716  characters (sample size = 200 questions)
+          //average length of year 11 = 46.0320  characters (sample size = 250 questions)
+          //average length of year 12 = 113.8000 characters (sample size = 250 questions)
+
+          //optimum amplification for year 9 = 120%
+          //optimum amplification for year 12 = 80%
+
+          //data points (13.2440,120) (23.3716,115) (46.0320,105) (113.8000,80)
+          //best fit line --> y = -0.392737x + 124.288054
+          size = -0.392737*(data[0].length) + 124.288054;//actually quite accurate, statistics <3
+
+          question_MathML = '<math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: ' + size + '%;">' + question_MathML + '</math>';
           //--- sending question to the game ---//
           //render the mathml code 
           MathML_Render(question_MathML, "expression1");
@@ -787,7 +805,7 @@ class game_class {
         //------------------ the question number in the game (HTML DOM) -------------------------//
         document.getElementById('QuestionNumber').innerHTML = game.QUESTION_NUMBER;
         game.QUESTION_NUMBER++;
-        console.log(answers);
+        
         //at this point, the method is vaiting for button presses
         document.getElementById('quitbutton').onclick = function() {
           //if the quit button is pressed
@@ -2080,7 +2098,7 @@ class simplifier {
     }
 
     result += "</mrow>";
-    result.replaceAll("*","&#8290;");//replaces * with invisible multiplication
+    result = result.replaceAll("*","&#8290;");//replaces * with invisible multiplication
     return result;
   }
 }
