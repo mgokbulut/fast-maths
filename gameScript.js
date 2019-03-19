@@ -421,7 +421,7 @@ class dailyQuestions_class {
         isCorrect = 0;
       }
     }
-    if (answers_power.length != 0 || answers_coefficient,length != 0) {
+    if (answers_power.length != 0 || answers_coefficient.length != 0) {
       isCorrect = 0;
     }
 
@@ -899,7 +899,7 @@ class game_class {
               isCorrect = 0;
             }
           }
-          if (answers_power.length != 0 || answers_coefficient,length != 0) {
+          if (answers_power.length != 0 || answers_coefficient.length != 0) {
             isCorrect = 0;
           }
           //if correct becomes 0, then the answers submited are wrong
