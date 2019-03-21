@@ -9,10 +9,10 @@ if(isset($_GET["time"])){
     $date   = new DateTime(); //this returns the current date time
     $dateInformation = $date->format('F j, Y H:i:s');
 
-    $query = mysqli_query($connection,"Select * from users where id='$id'");
+    $query = mysqli_query($connection,"Select * from users where id='$_SESSION['user_id']'");
     if(mysqli_num_rows($query)!=0){
 
-      	$query2 = mysqli_query($connection,"Update users set daily_questions='$dateInformation' where id='$id'");
+      	$query2 = mysqli_query($connection,"Update users set daily_questions='$dateInformation' where id='$_SESSION['user_id']'");
       	if(!$query2){
       		$data="error";
       	}
