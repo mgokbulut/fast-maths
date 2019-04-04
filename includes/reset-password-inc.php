@@ -67,7 +67,7 @@ if (isset($_POST["reset-password-submit"])) {
 					      echo "There was an error!";
 						  exit();
 					    } else {
-					      $passwordHased = md5($password); //hashing enetered password
+					      $passwordHased = md5($password); //hashing entered password
 						  mysqli_stmt_bind_param($statement, "ss", $passwordHased, $tokenEmail);
 						  mysqli_stmt_execute($statement);
 						  

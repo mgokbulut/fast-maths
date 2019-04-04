@@ -96,7 +96,7 @@ if(isset($_POST["reset_request_submit"])){
 */
 	//header("Location: ../Login_register/reset-password.php?reset=success");
 } else {
-	//header('Location: ../Login_register/login.php');
+	header('Location: ../Login_register/login.php');
 }
 
 

@@ -2,6 +2,26 @@
   require "includes/header.php";
 ?>
 
+<div class="container-mail">
+  <form class="container-form" action="includes/send-mail-inc.php" method="post">
+    <h1 style="text-align: center;">Contact Us</h1>
+    <p style="font-size: 20px;">* Please contact us if you have any suggestions or problems.</p>
+    <?php  
+      if(isset($_GET["mail"])){
+        if ($_GET["mail"] == "success") {
+          echo '<p style="color:green;font-size: 20px;"> mail has been sent successfully </p>';
+        }else if ($_GET["mail"] == "fail") {
+          echo '<p style="color:red;font-size: 20px;"> an error occured, please try later </p>';
+        }
+      }
+    ?>
+    <label for="subject"><b>Subject</b></label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
 <!-- content -->
 <script type="text/javascript" src="slideshow.js"></script>
 <div style="
@@ -78,25 +98,7 @@ border-radius: 10px;
   setInterval(function(){ plusSlides(1); }, 15000);
 </script>
 
-<div class="container-mail">
-  <form class="container-form" action="includes/send-mail-inc.php" method="post">
-    <h1 style="text-align: center;">Contact Us</h1>
-    <p style="font-size: 20px;">* Please contact us if you have any suggestions or problems.</p>
-    <?php  
-      if(isset($_GET["mail"])){
-        if ($_GET["mail"] == "success") {
-          echo '<p style="color:green;font-size: 20px;"> mail has been sent successfully </p>';
-        }else if ($_GET["mail"] == "fail") {
-          echo '<p style="color:red;font-size: 20px;"> an error occured, please try later </p>';
-        }
-      }
-    ?>
-    <label for="subject"><b>Subject</b></label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-    <input type="submit" value="Submit">
-  </form>
-</div>
 
 <style type="text/css">
   input[type=text], select, textarea {
