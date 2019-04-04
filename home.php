@@ -29,8 +29,8 @@ width: 15%;
 background: white;
 padding: auto;
 margin: auto;
-margin-top: 120px;
-margin-bottom: 10px;
+margin-top: 20px;
+margin-bottom: 20px;
 border: 5px solid black;
 border-radius: 10px;
 ">
