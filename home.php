@@ -143,7 +143,7 @@ input[type=submit]:hover {
   padding: auto;
   border-radius: 5px;
   padding: 20px;
-  padding-top:100px;
+  padding-top:125px;
 }
 </style>
 <?php
