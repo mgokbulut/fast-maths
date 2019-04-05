@@ -34,7 +34,7 @@
       <input type="email" name="email">
     </div>
     <div class="input-group">
-      <button type="submit" class="btn" name="reset_request_submit">Reveive new password by e-mail</button>
+      <button type="submit" class="btn" name="reset_request_submit">Receive new password by e-mail</button>
     </div>
     </form>
       

@@ -1,4 +1,4 @@
-<?php 
+S<?php 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require '../libraries/PHPMailer/src/Exception.php';

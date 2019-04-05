@@ -44,7 +44,7 @@
       <input type="password" name="password">
     </div>
     <div class="input-group">
-      <label>Enter a the password again</label>
+      <label>Enter your new password again</label>
       <input type="password" name="password-repeat">
     </div>
     
