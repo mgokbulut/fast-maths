@@ -14,9 +14,11 @@
     <?php include('errors.php'); ?>
      <?php 
 
-      if(isset($_GET["newpassword"])) {
-        if ($_GET["newpassword"] == "updated") {
-          echo '<p style="color:green">your password is updated</p>';
+      $username = ($conn,$_POST['username']);
+		  $passwordB4H = ($conn,$_POST['password']); //password before hash
+		  $gosted = hash('gost',$passwordB4H);
+	  	$password = hash('whirlpool',$gosted);
+
         }
       }
       ?>
